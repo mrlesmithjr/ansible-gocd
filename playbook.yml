@@ -7,4 +7,5 @@
     - gocd_server: true
   roles:
     - role: ansible-gocd
+    - role: ansible-redis
   tasks:

@@ -72,6 +72,7 @@ Example Playbook
   vars:
   roles:
     - role: ansible-gocd
+    - role: ansible-redis
   tasks:
 ````
 
@@ -84,6 +85,7 @@ Example Playbook
   vars:
   roles:
     - role: mrlesmithjr.gocd
+    - role: mrlesmithjr.redis
   tasks:
 ````
 

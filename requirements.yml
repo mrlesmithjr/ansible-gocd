@@ -1,2 +1,3 @@
 ---
 - src: https://github.com/mrlesmithjr/ansible-gocd.git
+- src: https://github.com/mrlesmithjr/ansible-redis.git
