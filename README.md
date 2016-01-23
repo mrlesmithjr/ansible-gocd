@@ -3,6 +3,8 @@ Role Name
 
 Installs GoCD (Go Continuous Delivery) https://www.go.cd
 
+[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-gocd.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-gocd)
+
 Requirements
 ------------
 
