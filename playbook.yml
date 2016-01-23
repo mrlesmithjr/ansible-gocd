@@ -1,10 +1,21 @@
 ---
-- name: Installs GoCD
-  hosts: all
+- name: Provisions GoCD Servers
+  hosts: gocd-servers
   become: true
   vars:
     - gocd_agent: true
     - gocd_server: true
+  roles:
+    - role: ansible-gocd
+    - role: ansible-redis
+  tasks:
+
+- name: Provisions GoCD Agents
+  hosts: gocd-agents
+  become: true
+  vars:
+    - gocd_agent: true
+    - gocd_server: false
   roles:
     - role: ansible-gocd
     - role: ansible-redis
