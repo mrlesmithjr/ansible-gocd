@@ -1,0 +1,22 @@
+---
+- name: debian | adding gocd repo key
+  apt_key:
+    url: "{{ gocd_repo_key }}"
+    state: present
+
+- name: debian | adding gocd repo
+  apt_repository:
+    repo: "{{ gocd_repo }}"
+    state: present
+
+- name: debian | installing go-server
+  apt:
+    name: "go-server"
+    state: present
+  when: gocd_server is defined and gocd_server
+
+- name: debian | installing go-agent
+  apt:
+    name: "go-agent"
+    state: present
+  when: gocd_agent is defined and gocd_agent

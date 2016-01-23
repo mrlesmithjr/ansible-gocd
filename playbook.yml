@@ -1,0 +1,10 @@
+---
+- name: Installs GoCD
+  hosts: all
+  become: true
+  vars:
+    - gocd_agent: true
+    - gocd_server: true
+  roles:
+    - role: ansible-gocd
+  tasks:
