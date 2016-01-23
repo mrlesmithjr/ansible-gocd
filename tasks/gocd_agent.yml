@@ -13,3 +13,8 @@
     mode: 0644
   notify:
     - restart go-agent
+
+- name: gocd_agent | ensuring go-agent is running
+  service:
+    name: "go-agent"
+    state: started

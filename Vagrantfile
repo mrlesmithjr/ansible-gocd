@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
   end
   config.vm.define "gocdagent" do |gocdagent|
     gocdagent.vm.box = "mrlesmithjr/trusty64"
-    gocdagent.vm.hostname = "gocd"
+    gocdagent.vm.hostname = "gocdagent"
 
     gocdagent.vm.network :private_network, ip: "192.168.202.202"
 
