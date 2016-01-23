@@ -1,6 +1,6 @@
 ---
 # defaults file for ansible-gocd
-gocd_agent: true  #defines if go-agent should be installed. All hosts require an agent
+gocd_agent: true  #defines if go-agent should be installed. All hosts require an agent to build from
 gocd_apt_packages:  #defines additional apt packages to install
   - name: python-dev
     state: present
