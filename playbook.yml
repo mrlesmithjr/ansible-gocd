@@ -7,6 +7,7 @@
     - gocd_server: true
   roles:
     - role: ansible-gocd
+    - role: ansible-ntp
     - role: ansible-redis
   tasks:
 
@@ -19,5 +20,6 @@
     - gocd_go_server: 192.168.202.201
   roles:
     - role: ansible-gocd
+    - role: ansible-ntp
     - role: ansible-redis
   tasks:
