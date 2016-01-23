@@ -2,3 +2,6 @@
 # tasks file for ansible-gocd
 - include: debian.yml
   when: ansible_os_family == "Debian"
+
+- include: python_modules.yml
+  when: gocd_python_modules is defined

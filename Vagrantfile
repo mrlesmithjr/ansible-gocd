@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
     gocd.vm.hostname = "gocd"
 
     gocd.vm.network :private_network, ip: "192.168.202.201"
-    gocd.vm.network "forwarded_port", guest: 8000, host: 8000
+    gocd.vm.network "forwarded_port", guest: 8153, host: 8153
 
     gocd.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
