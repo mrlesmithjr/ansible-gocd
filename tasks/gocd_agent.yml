@@ -1,0 +1,5 @@
+---
+- name: debian | installing go-agent
+  apt:
+    name: "go-agent"
+    state: present

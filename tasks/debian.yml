@@ -15,15 +15,3 @@
     state: "{{ item.state }}"
   with_items: gocd_apt_packages
   when: gocd_apt_packages is defined
-  
-- name: debian | installing go-server
-  apt:
-    name: "go-server"
-    state: present
-  when: gocd_server is defined and gocd_server
-
-- name: debian | installing go-agent
-  apt:
-    name: "go-agent"
-    state: present
-  when: gocd_agent is defined and gocd_agent

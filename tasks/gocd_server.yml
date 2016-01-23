@@ -1,0 +1,5 @@
+---
+- name: debian | installing go-server
+  apt:
+    name: "go-server"
+    state: present
