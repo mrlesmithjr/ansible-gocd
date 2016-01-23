@@ -6,30 +6,30 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  config.vm.define "gocd-server" do |gocd-server|
-    gocd-server.vm.box = "mrlesmithjr/trusty64"
-    gocd-server.vm.hostname = "gocd-server"
+  config.vm.define "gocdserver" do |gocdserver|
+    gocdserver.vm.box = "mrlesmithjr/trusty64"
+    gocdserver.vm.hostname = "gocdserver"
 
-    gocd-server.vm.network :private_network, ip: "192.168.202.201"
-    gocd-server.vm.network "forwarded_port", guest: 8153, host: 8153
+    gocdserver.vm.network :private_network, ip: "192.168.202.201"
+    gocdserver.vm.network "forwarded_port", guest: 8153, host: 8153
 
-    gocd-server.vm.provider "virtualbox" do |vb|
+    gocdserver.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
     end
-    gocd-server.vm.provision :shell, inline: 'ansible-galaxy install -r /vagrant/requirements.yml -f'
-    gocd-server.vm.provision :shell, inline: 'ansible-playbook -i /vagrant/hosts -c local /vagrant/playbook.yml --limit "gocd-server"'
+    gocdserver.vm.provision :shell, inline: 'ansible-galaxy install -r /vagrant/requirements.yml -f'
+    gocdserver.vm.provision :shell, inline: 'ansible-playbook -i /vagrant/hosts -c local /vagrant/playbook.yml --limit "gocdserver"'
   end
-  config.vm.define "gocd-agent" do |gocd-agent|
-    gocd-agent.vm.box = "mrlesmithjr/trusty64"
-    gocd-agent.vm.hostname = "gocd"
+  config.vm.define "gocdagent" do |gocdagent|
+    gocdagent.vm.box = "mrlesmithjr/trusty64"
+    gocdagent.vm.hostname = "gocd"
 
-    gocd-agent.vm.network :private_network, ip: "192.168.202.202"
+    gocdagent.vm.network :private_network, ip: "192.168.202.202"
 
-    gocd-agent.vm.provider "virtualbox" do |vb|
+    gocdagent.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
     end
-    gocd-agent.vm.provision :shell, inline: 'ansible-galaxy install -r /vagrant/requirements.yml -f'
-    gocd-agent.vm.provision :shell, inline: 'ansible-playbook -i /vagrant/hosts -c local /vagrant/playbook.yml --limit "gocd-agent"'
+    gocdagent.vm.provision :shell, inline: 'ansible-galaxy install -r /vagrant/requirements.yml -f'
+    gocdagent.vm.provision :shell, inline: 'ansible-playbook -i /vagrant/hosts -c local /vagrant/playbook.yml --limit "gocdagent"'
   end
   config.vm.provision :shell, path: "provision.sh", keep_color: "true"
 end
