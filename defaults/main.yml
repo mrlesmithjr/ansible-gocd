@@ -6,6 +6,9 @@ gocd_apt_packages:  #defines additional apt packages to install
     state: present
   - name: python-pip
     state: present
+gocd_go_server: '127.0.0.1'  #defines the gocd_server to connect agent to
+gocd_go_server_port: 8153
+gocd_java_home: '/usr/lib/jvm/java-7-openjdk-amd64/jre'  #defines java home
 gocd_python_modules:  #defines additional python modules to install
   - name: ansible
     state: present

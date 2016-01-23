@@ -16,6 +16,7 @@
   vars:
     - gocd_agent: true
     - gocd_server: false
+    - gocd_go_server: 192.168.202.201
   roles:
     - role: ansible-gocd
     - role: ansible-redis
